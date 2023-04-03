@@ -1,0 +1,41 @@
+.encabezado {
+    background-color: rgb(44, 7, 53);
+}
+
+.computer {
+    display: none;
+}
+
+.phone {
+    display: flex;
+    align-items: center;
+}
+
+.phone-header {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.phone-header a:hover{
+    color:black ;
+}
+
+nav.phone {
+    width: 100%;
+}
+
+.nav-phone {
+    padding: 0 10px;
+}
+
+.buscador {
+    width: 95%;
+}
+
+.input {
+    width: 115px;
+}
+
+.menu {
+    border: none;
+}

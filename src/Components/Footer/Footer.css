@@ -1,0 +1,23 @@
+.integrantes {
+    text-align: center;
+    color: white;
+    margin-top: 5px;
+    padding-bottom: 15px;
+}
+
+.social-links {
+    color: grey;
+}
+
+.formato .footer ul {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    font-size: 18px;
+    font-weight: bolder;
+}
+.tmdb{
+    margin: 0% 35%;
+    width: 30%;
+}
