@@ -51,7 +51,7 @@ render() {
                     <Link to={`/peliculas/detalle/id/${this.props.datosPeliculas.id}`}>
                         <button>Ir a detalle</button>
                     </Link>
-                    <button onClick={() => this.adminFavoritos(this.props.datosPeliculas.id)}>{this.state.favsLegend}</button>
+                   
                 </div>
 
             </article>
