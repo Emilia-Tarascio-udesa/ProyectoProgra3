@@ -1,41 +1,38 @@
+/*logo*/
+header .logo {
+    border-radius: 50%;
+    width: 10%;
+    border: 3px solid black;
+}
+
+/*HEADER*/
 .encabezado {
     background-color: rgb(44, 7, 53);
 }
-
-.computer {
+    .computer {
     display: none;
 }
 
-.phone {
-    display: flex;
-    align-items: center;
-}
 
-.phone-header {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-}
-.phone-header a:hover{
-    color:black ;
-}
+@media (min-width:720px) {
+    .navegador {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        font-size: 18px;
+        font-weight: bolder;
+        max-height: 80px;
+    }
 
-nav.phone {
-    width: 100%;
-}
+    .comp-nav {
+        padding: 0 10px;
+        width: 10%;
+        padding-top: 20px;
+        max-height: 10%;
+    }
 
-.nav-phone {
-    padding: 0 10px;
-}
+    .logo {
+        width: 70%;
+    }
 
-.buscador {
-    width: 95%;
-}
-
-.input {
-    width: 115px;
-}
-
-.menu {
-    border: none;
 }
