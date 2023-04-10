@@ -5,6 +5,7 @@ import Footer from "./Components/Footer/Footer"
 import Header from "./Components/Header/Header";
 import Buscador from "./Components/Buscador/Buscador";
 import DetallePelicula from "../src/screens/DetallePelicula/DetallePelicula";
+import Favoritas from "../screens/Favoritas/Favoritas"
 
 
 function App() {
