@@ -10,8 +10,7 @@ function Home (){
 
             <h1 className="titular-home">Películas en cartelera</h1>
             <Movie />
-            <h1 className="titular-home">Series en cartelera</h1>
-            <Serie />
+            
 
 
 
@@ -20,3 +19,5 @@ function Home (){
 }
 
 export default Home;
+//<h1 className="titular-home">Series en cartelera</h1>
+//<Serie />

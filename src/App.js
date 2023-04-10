@@ -1,8 +1,9 @@
 import React from "react";
 import {Route, Switch } from 'react-router-dom';
-import Home from "../src/screens/Home/";
+import Home from "./screens/Home/Home";
 import Footer from "./Components/Footer/Footer"
 import Header from "./Components/Header/Header";
+import Favoritos from "./screens/favoritos/favoritos";
 //import Buscador from "./Components/Buscador/Buscador";
 //import DetallePeli from "./Components/DetallePeli";
 
@@ -13,7 +14,7 @@ function App() {
       <Header />
       <Switch>
         <Route path="/" component={Home}/>
-        <Route path="/resultados/:title" component={Resultados}/>
+      
       </Switch>
       <Footer/>
     
@@ -22,3 +23,4 @@ function App() {
 }
 
 export default App;
+// <Route path="/resultados/:title" component={Resultados}/>
