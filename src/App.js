@@ -3,9 +3,8 @@ import {Route, Switch } from 'react-router-dom';
 import Home from "./screens/Home/Home";
 import Footer from "./Components/Footer/Footer"
 import Header from "./Components/Header/Header";
-import Favoritos from "./screens/favoritos/favoritos";
-//import Buscador from "./Components/Buscador/Buscador";
-//import DetallePeli from "./Components/DetallePeli";
+import Buscador from "./Components/Buscador/Buscador";
+import DetallePelicula from "../src/screens/DetallePelicula/DetallePelicula";
 
 
 function App() {
