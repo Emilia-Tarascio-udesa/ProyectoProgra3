@@ -14,6 +14,9 @@ function App() {
       <Header />
       <Switch>
         <Route path="/" component={Home}/>
+        <Route path="/peliculasFavoritas" component={Favoritas}/>
+        <Route path="/buscador" component={Buscador}/>
+        <Route path="/detallePelicula" component={DetallePelicula}/>
       
       </Switch>
       <Footer/>
