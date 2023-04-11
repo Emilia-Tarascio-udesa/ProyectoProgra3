@@ -12,9 +12,9 @@ function Footer() {
                 
 
                 <ul className="integrantes">
-                    <li>Emilia Tarascio</li>
                     <li>Lucila Cabello</li>
                     <li>Rocco Pellegrino</li>
+                    <li>Emilia Tarascio</li>
                 </ul>
             </nav>
         </footer>
