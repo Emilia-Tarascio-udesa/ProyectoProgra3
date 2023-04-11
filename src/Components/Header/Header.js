@@ -2,24 +2,34 @@ import React from 'react'
 import './Header.css'
 import {Link} from 'react-router-dom';
 
-function Header(props) {
+function Header() {
     
     return (
-        <header className="header">
-        <div className='maineimagen'>
-                <img className='logo' src='../img/logo.jpeg' alt="logo" />
-                <Link className='headerTitulo' to='/'>STREAMTIME</Link>
-
-        </div>
+        <header className="encabezado">
+            <nav className="computer">
                 <div>
-            <ul className='headerLista'>
-            <li><Link className='headerlista' to='/favoritos'>Favoritos</Link></li>
-            <li><Link className='headerlista' to='/peliculas'>Peliculas</Link></li>
-            <li><Link className='headerlista' to='/Series'>Series</Link></li>
-            <li><Link className='headerlista' to='/ver-todas'>Ver todos</Link></li>
-            </ul>
+                    <ul className="navegador">
+                        <li className="comp-nav">
+                            <Link to="/">
+                                <img src="/img/logo.jpeg"alt="logo"/>
+                            </Link>
+                        </li>
+                        
+                        <li className="comp-nav">
+                            <Link to="/peliculas/favoritos">Favoritos</Link>
+                        </li>
+                        
+                        <li className="comp-nav">
+                            <Link to="/peliculas/pop">Peliculas</Link>
+                        </li>
+                        
+                        <li className="comp-nav">
+                            <Link to="/series/pop">Series</Link>
+                        </li> 
+                    
+                    </ul>
                 </div>
-
+            </nav>
         </header>
     );
 }
