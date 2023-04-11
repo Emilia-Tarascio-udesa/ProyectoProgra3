@@ -1,9 +1,9 @@
-import React from "react"
+import React, {Component} from "react"
 import {Link} from 'react-router-dom';
 import SeriesCard from '../SeriesCard/SeriesCard'
 
 
-let urlpopularSeries =''
+let urlpopularSeries ='https://api.themoviedb.org/3/tv/top_rated?api_key=cd01343e0629131590a07adb7eb11c98'
 
 class Series extends Component {
     constructor() {
@@ -29,7 +29,7 @@ class Series extends Component {
                 <h1 className='encabezado'>Series Populares</h1>
                 <section className='cardContainer'>
                     {
-                        this.state.seriesPopulares.map((unaSerie, idx) => <MovieCard key={unaSerie.name + idx} datosSeries={unaSerie} />)
+                        this.state.seriesPopulares.map((unaSerie, idx) => <SeriesCard key={unaSerie.name + idx} datosSeries={unaSerie} />)
                     }
                 </section>
             </React.Fragment>

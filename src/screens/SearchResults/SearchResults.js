@@ -2,7 +2,7 @@ import React, {Component} from "react"
 import Buscador from "../../Components/Buscador/Buscador"
 import ResultadosCards from "../../Components/ResultadosCards/ResultadosCards"
 
-class Resultados extends Component {
+class SearchResults extends Component {
     constructor(props){
         super(props);
         this.state={
@@ -20,6 +20,7 @@ class Resultados extends Component {
             loading: false
         }))
         .catch()
+        
 }
 
 render(){
@@ -43,3 +44,5 @@ render(){
 }
 
     }
+
+ export default SearchResults

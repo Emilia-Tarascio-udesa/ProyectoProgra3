@@ -49,7 +49,7 @@ render() {
 
                 <div className='buttonsCard'>
                     <Link to={`/peliculas/detalle/id/${this.props.datosPeliculas.id}`}>
-                        <button>Ir a detalle</button>
+                        <button>Ir a detalle de peliculas</button>
                     </Link>
                    
                 </div>

@@ -9,11 +9,11 @@ class Buscador extends Component{
             input: "",
         }
     }
-    prevRecarga(e){ 
+    prevenirLoad(e){ 
         e.preventDefault();
     };
 
-    saveChanges(e){ 
+    guardarCambios(e){ 
         this.setState({
             input: e.target.value
         }); 
@@ -21,8 +21,8 @@ class Buscador extends Component{
     render () {
         return (
             <React.Fragment>
-                <form onSubmit={(e) => this.prevRecarga(e)}>
-                    <input type='text' placeholder='pelicula' onChange={(e) => this.saveChanges(e)} value={this.state.input} />
+                <form onSubmit={(e) => this.prevenirLoad(e)}>
+                    <input type='text' placeholder='pelicula' onChange={(e) => this.guardarCambios(e)} value={this.state.input} />
                     {
                         this.state.input ?
                             <Link to={`/resultados/${this.state.input}`}>
