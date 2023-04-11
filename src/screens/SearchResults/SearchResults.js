@@ -45,4 +45,5 @@ render(){
 
     }
 
- export default SearchResults
+
+export default SearchResults;
