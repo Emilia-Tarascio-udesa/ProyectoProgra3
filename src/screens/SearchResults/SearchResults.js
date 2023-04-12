@@ -31,7 +31,7 @@ render(){
         <h1>Resultados de tu busqueda</h1>
 
         <section>{
-        this.state.peliculasEncontradas.length !== 0 ? 
+        this.state.peliculas.length !== 0 ? 
                             this.state.peliculas.map((unaPelicula, idx) => <ResultadosCards key={unaPelicula.title + idx} datosresult={unaPelicula}/>)
                                 : 
                             <h1>No se encontraron resultados</h1>}
