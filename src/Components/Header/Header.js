@@ -11,7 +11,7 @@ function Header() {
                     <ul className="navegador">
                         <li className="comp-nav">
                             <Link to="/">
-                                <img src="/img/logo.jpeg"alt="logo"/>
+                                <img  className="logo"src="/img/logo.png"alt="logo"/>
                             </Link>
                         </li>
                         

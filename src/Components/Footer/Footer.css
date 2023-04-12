@@ -1,26 +1,30 @@
+.formato {
+    background-color: #000;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    font-size: 14px;
+}
 
-/*FOOTER*/
+.tmdb img {
+    height: 50px;
+}
 
 .integrantes {
-    text-align: center;
-    color: white;
-    margin-top: 5px;
-    padding-bottom: 15px;
+    list-style-type: none;
+    padding: 0;
+    margin-top: 10px;
 }
 
-.social-links {
-    color: grey;
+.integrantes li {
+    display: inline;
+    margin-right: 10px;
 }
 
-.formato .footer ul {
-    list-style: none;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    font-size: 18px;
-    font-weight: bolder;
+.integrantes li::after {
+    content: " | ";
 }
-.tmdb{
-    margin: 0% 35%;
-    width: 30%;
+
+.integrantes li:last-child::after {
+    content: "";
 }

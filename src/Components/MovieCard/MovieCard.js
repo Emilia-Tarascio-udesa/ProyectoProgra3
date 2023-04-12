@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-
+import './MovieCard.css'
 
 
 class MovieCard extends Component {
@@ -49,7 +49,7 @@ render() {
 
                 <div className='buttonsCard'>
                     <Link to={`/peliculas/detalle/id/${this.props.datosPeliculas.id}`}>
-                        <button>Ir a detalle de peliculas</button>
+                        <button>Ir al detalle de la pelicula</button>
                     </Link>
                    
                 </div>

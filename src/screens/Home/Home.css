@@ -1,0 +1,91 @@
+/* home.css */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .titular-home {
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+    margin: 20px 0;
+  }
+  
+  /* Estilo para los componentes Movie y Series en cartelera */
+  .cardContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  /* Estilo para el componente Buscador */
+  .buscadorContainer {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .buscadorInput {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+  }
+  
+  .buscadorBoton {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    color: #fff;
+    background-color: #e50914;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .buscadorBoton:hover {
+    background-color: #b2070f;
+  }
+  
+  /* Estilo para el componente Header */
+  .headerContainer {
+    background-color: #000;
+    padding: 10px 20px;
+  }
+  
+  .headerLogo {
+    width: 150px;
+  }
+  
+  /* Estilo para el componente Footer */
+  .footerContainer {
+    background-color: #000;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .footerLogo {
+    width: 150px;
+  }
+  
+  .integrantes {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 20px;
+  }
+  
+  .integrantes li {
+    display: inline-block;
+    margin: 0 10px;
+    font-size: 14px;
+    color: #fff;
+  }
+  

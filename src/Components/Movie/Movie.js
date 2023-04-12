@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
 import MovieCard from '../MovieCard/MovieCard';
-
+import './Movie.css'
 
 let urlpopularMovies = "https://api.themoviedb.org/3/movie/popular?api_key=cd01343e0629131590a07adb7eb11c98"
 
@@ -24,7 +24,7 @@ class Movies extends Component {
             .catch()
     }
 
-    render() {
+    render() { 
         return (
             <React.Fragment>
                 <h1 className='encabezado'>Películas Populares</h1>

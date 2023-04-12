@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import './SeriesCard.css'
 
 
 
-class MovieCard extends Component {
+class SeriesCard extends Component {
     constructor(props) {
         super(props)
         this.state = {
@@ -28,17 +29,15 @@ class MovieCard extends Component {
   
 render() {
         return (
-            <article>
+            <article className='series'>
 
 
                 <figure className='figuraImagen'>
                         <img src={`https://image.tmdb.org/t/p/w342/${this.props.datosSeries.poster_path}`} alt="Cartel de película" />
                 </figure>
 
-
                 <h2 className='titulo'>{this.props.datosSeries.original_name}</h2>
-               
-               
+                  
                 <div>
                     <p onClick={() => this.funcionalidadDescripcion()} className='OverViewCard'> {this.state.textoMostrarDescripcion} </p>
                     <p className={this.state.descriptionClass}>{this.props.datosSeries.overview}</p>
@@ -49,7 +48,7 @@ render() {
 
                 <div>
                     <Link to={`/series/detalle/id/${this.props.datosSeries.id}`}>
-                        <button>Ir a detalle de series</button>
+                        <button>Ir al detalle de la serie</button>
                     </Link>
                    
                 </div>
@@ -59,5 +58,5 @@ render() {
     }
 }
 
-export default MovieCard;
+export default SeriesCard;
 

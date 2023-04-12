@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import { Link } from 'react-router-dom';
+import './Buscador.css'
 
 class Buscador extends Component{
     
@@ -21,15 +22,15 @@ class Buscador extends Component{
     render () {
         return (
             <React.Fragment>
-                <form onSubmit={(e) => this.prevenirLoad(e)}>
-                    <input type='text' placeholder='pelicula' onChange={(e) => this.guardarCambios(e)} value={this.state.input} />
+                <form  className="buscador-container" onSubmit={(e) => this.prevenirLoad(e)}>
+                    <input className="buscador-input" type='text' placeholder='pelicula' onChange={(e) => this.guardarCambios(e)} value={this.state.input} />
                     {
                         this.state.input ?
                             <Link to={`/resultados/${this.state.input}`}>
-                                <input type='submit' value='submit' /> 
+                                <input className="buscador-submit"  type='submit' value='submit' /> 
                             </Link> 
                             :
-                            <input type='submit' value='submit' /> 
+                            <input className="buscador-submit" type='submit' value='submit' /> 
                     }
                 </form> 
             </React.Fragment>

@@ -1,0 +1,49 @@
+body {
+    background-color: #000;
+  }
+  
+  /* Encabezado de la página */
+  .encabezado {
+    font-size: 36px;
+    color: #fff;
+    text-align: center;
+    margin-top: 30px;
+  }
+  
+  /* Contenedor de las tarjetas de series */
+  .cardContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 30px;
+  }
+  
+  /* Tarjeta de series */
+  .seriesCard {
+    width: 200px;
+    margin: 10px;
+  }
+  
+  /* Imagen de la serie */
+  .seriesCard img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 4px;
+  }
+  
+  /* Título de la serie */
+  .seriesCard h3 {
+    font-size: 18px;
+    color: #fff;
+    text-align: center;
+    margin-top: 10px;
+  }
+  
+  /* Descripción de la serie */
+  .seriesCard p {
+    font-size: 14px;
+    color: #ddd;
+    text-align: center;
+    margin-top: 5px;
+  }

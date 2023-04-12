@@ -1,7 +1,7 @@
 import React, {Component} from "react"
 import {Link} from 'react-router-dom';
 import SeriesCard from '../SeriesCard/SeriesCard'
-
+import './Series.css'
 
 let urlpopularSeries ='https://api.themoviedb.org/3/tv/top_rated?api_key=cd01343e0629131590a07adb7eb11c98'
 

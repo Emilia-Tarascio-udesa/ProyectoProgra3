@@ -1,0 +1,116 @@
+/* MovieCard.css */
+
+.titular-home {
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    color: #ffffff;
+    text-transform: uppercase;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+  }
+  
+/* Estilo para el contenedor de la tarjeta de película */
+.movie-box {
+    flex: 0 0 calc(16.666% - 20px);
+    max-width: calc(16.666% - 20px);
+    margin: 10px;
+    background-color: #141414;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  /* Estilo para la imagen de la película */
+  .figuraImagen img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 5px 5px 0 0;
+  }
+  
+  /* Estilo para el título de la película */
+  .titulo {
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    margin: 10px;
+    text-align: center;
+  }
+  
+  /* Estilo para la descripción de la película */
+  .descripcionCard {
+    padding: 0 10px 10px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+  
+  .descripcionCard p {
+    font-size: 14px;
+    color: #fff;
+    margin-bottom: 0;
+  }
+  
+  /* Estilo para el botón de ver/descripción */
+  .OverViewCard {
+    font-size: 12px;
+    color: #fff;
+    cursor: pointer;
+    text-align: center;
+  }
+  
+  /* Estilo para el botón de ir a detalle de película */
+  .buttonsCard {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .buttonsCard a {
+    text-decoration: none;
+  }
+  
+  .buttonsCard button {
+    font-size: 14px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #e50914;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    margin: 10px;
+    cursor: pointer;
+  }
+  
+  .buttonsCard button:hover {
+    background-color: #f40612;
+  }
+  
+  /* Estilo para la animación de la descripción */
+  .mostrar {
+    max-height: 200px;
+  }
+  
+  .ocultar {
+    max-height: 0;
+  }
+  
+  /* Estilo para el contenedor de las tarjetas de película */
+  .movie-container {
+    display: flex;
+    overflow-x: auto;
+    padding: 20px;
+  }
+  
+  /* Estilo para el contenedor del componente MovieCard en la página */
+  .page-container {
+    width: 100%;
+    overflow-x: hidden;
+  }
