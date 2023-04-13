@@ -23,7 +23,7 @@ class Buscador extends Component{
         return (
             <React.Fragment>
                 <form  className="buscador-container" onSubmit={(e) => this.prevenirLoad(e)}>
-                    <input className="buscador-input" type='text' placeholder='pelicula' onChange={(e) => this.guardarCambios(e)} value={this.state.input} />
+                    <input className="buscador-input" type='text' placeholder='Buscar' onChange={(e) => this.guardarCambios(e)} value={this.state.input} />
                     {
                         this.state.input ?
                             <Link to={`/resultados/${this.state.input}`}>
