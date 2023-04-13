@@ -10,7 +10,7 @@
   }
   
   .logo {
-    max-width: 100px;
+    max-width: 200px;
     height: auto;
   }
   
@@ -22,7 +22,7 @@
   }
   
   .comp-nav {
-    margin-right: 16px;
+    margin-right: 30px;
     text-align: center; /* Centrar elementos */
   }
   

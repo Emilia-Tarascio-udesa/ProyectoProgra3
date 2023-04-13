@@ -10,7 +10,7 @@ class DetallePelicula extends Component {
         }
     }
     componentDidMount(){
-        fetch("https://api.themoviedb.org/3/movie/${this.state.id}?api_key=cd01343e0629131590a07adb7eb11c98")
+        fetch(`https://api.themoviedb.org/3/movie/${this.state.id}?api_key=cd01343e0629131590a07adb7eb11c98`)
         .then(resp => resp.json())
         .then(data => this.setState({
             peliculaquellega:data,
@@ -25,11 +25,12 @@ class DetallePelicula extends Component {
                 <h2 className='name'>{this.state.peliculaquellega.title}</h2> 
                 <img className='movie' src={`https://image.tmdb.org/t/p/w342/${this.state.peliculaquellega.poster_path}`} alt=""></img>
                 <p className='resumen'>Resumen: {this.state.peliculaquellega.overview}</p>
-                <h2 className='rating'>Rating: {this.state.peliculaquellega.vote_average}</h2>
+                <h2 className='rating'>Rating: {this.state.peliculaquellega.vote_average}<span className="rating-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span></h2>
                 <h2 className='estreno'>Fecha de estreno: {this.state.peliculaquellega.release_date}</h2>
-                <div> <ul>
-                 {this.state.generos.map((Genero, idx) => <li key={Genero.name + idx}>{Genero.name}</li>)}
-                </ul> </div>
+                <h2 className="generos-title">Géneros:</h2>
+          <div>  <ul className="generos-list">
+              {this.state.generos.map((Genero, idx) => <li key={Genero.name + idx}>{Genero.name}</li>)}
+            </ul> </div>
             </>
         )
     }    

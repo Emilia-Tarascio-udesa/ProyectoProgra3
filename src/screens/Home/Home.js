@@ -9,7 +9,7 @@ import './Home.css';
 function Home (){
     return(
         <React.Fragment>
-            <Header/>
+            <Header/>  
             <Buscador/>
             <Movie />           
             <Series />
