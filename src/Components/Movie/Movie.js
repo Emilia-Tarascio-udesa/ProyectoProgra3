@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import {Link} from 'react-router-dom';
 import MovieCard from '../MovieCard/MovieCard';
 import './Movie.css'
 
@@ -30,7 +29,7 @@ class Movies extends Component {
                 <h1 className='encabezado'>Películas Populares</h1>
                 <section className='cardContainer'>
                     {
-                        this.state.peliculasPopulares.map((unaPelicula, idx) => <MovieCard key={unaPelicula.name + idx} datosPeliculas={unaPelicula} />)
+                        this.state.peliculasPopulares.map((unaPelicula, idx) => <MovieCard key={unaPelicula.name + idx} datosPelicula={unaPelicula} />)
                     }
                 </section>
             </React.Fragment>

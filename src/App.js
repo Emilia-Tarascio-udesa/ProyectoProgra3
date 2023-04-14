@@ -1,5 +1,6 @@
 import React from "react";
-import {Route, Switch } from 'react-router-dom';
+import { Route, Link } from "react-router-dom";
+import {Switch } from 'react-router-dom';
 import Home from "./screens/Home/Home";
 import Footer from "./Components/Footer/Footer"
 import Header from "./Components/Header/Header";
@@ -11,14 +12,14 @@ import SearchResults from "./screens/SearchResults/SearchResults"
 
 function App() {
   return (
-    <div className="App">
+    <main className="App">
       <Switch>
-        <Route path="/" component={Home}/>
+        <Route exact path="/" component={Home}/>
         <Route path="/peliculas/detalle/id/:id" component={DetallePelicula}/>
         <Route path="/series/detalle/id/:id" component={DetalleSerie}/>
         <Route path="/resultados/title/:title" component={SearchResults}/>
       </Switch>
-    </div>
+    </main>
   );
 }
 

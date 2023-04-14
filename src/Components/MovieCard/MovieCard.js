@@ -32,24 +32,24 @@ render() {
 
 
                 <figure className='figuraImagen'>
-                        <img src={`https://image.tmdb.org/t/p/w342/${this.props.datosPeliculas.poster_path}`} alt="Cartel de película" />
+                        <img src={`https://image.tmdb.org/t/p/w342/${this.props.datosPelicula.poster_path}`} alt="Cartel de película" />
                 </figure>
 
 
-                <h2 className='titulo'>{this.props.datosPeliculas.title}</h2>
+                <h2 className='titulo'>{this.props.datosPelicula.title}</h2>
                
                
                 <div className='descripcionCard'>
                     <p onClick={() => this.funcionalidadDescripcion()} className='OverViewCard'> {this.state.textoMostrarDescripcion} </p>
-                    <p className={this.state.descriptionClass}>{this.props.datosPeliculas.overview}</p>
-                    <Link to={`/peliculas/detalle/id/${this.props.datosPeliculas.id}`}>
-                    </Link>
+                    <p className={this.state.descriptionClass}>{this.props.datosPelicula.overview}</p>
+                    <Link to={`/peliculas/detalle/id/${this.props.datosPelicula.id}`}>    </Link>
+                   
                 </div>
 
 
                 <div className='buttonsCard'>
-                    <Link to={`/peliculas/detalle/id/${this.props.datosPeliculas.id}`}>
-                        <button>Ir al detalle de la pelicula</button>
+                    <Link to={`/peliculas/detalle/id/${this.props.datosPelicula.id}`}>
+                    <button>Ir al detalle de la pelicula </button>
                     </Link>
                    
                 </div>
