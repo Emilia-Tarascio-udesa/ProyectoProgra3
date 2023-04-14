@@ -40,7 +40,7 @@ class MovieCard extends Component {
         }
       }
  
-    anhadirFav(id){
+    anadirFav(id){
         let storage = localStorage.getItem('favoritos')
     
         if(storage === null){
@@ -102,6 +102,9 @@ render() {
                         <button>Ir al detalle de la pelicula</button>
                     </Link>
                    
+                </div>
+                <div>
+                  <button onClick={()=>this.anadirFav(this.props.datosPeliculas.id)}>añadir a Favs</button>
                 </div>
 
             </article>
