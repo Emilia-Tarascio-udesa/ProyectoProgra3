@@ -9,6 +9,7 @@ class MovieCard extends Component {
         this.state = {
             descriptionClass: 'ocultar',
             textoMostrarDescripcion: 'Ver descripcion',
+            Favs : 'Agregar a favoritos'
         };
     };
 
@@ -24,8 +25,57 @@ class MovieCard extends Component {
         }
     }
 
-   
-  
+//revisar 
+    componentDidMount(){
+        let storage = localStorage.getItem('favoritos')
+        let storageAArray = JSON.parse(storage)
+    
+        if(storageAArray !== null){
+          let estaEnElArray = storageAArray.includes(this.props.info.id)
+          if(estaEnElArray){
+            this.setState({
+              esFavorito: true
+            })
+          }
+        }
+      }
+ 
+    anadirFav(id){
+        let storage = localStorage.getItem('favoritos')
+    
+        if(storage === null){
+          let idEnArray = [id]
+          let arrayAString = JSON.stringify(idEnArray)
+          localStorage.setItem('favoritos', arrayAString)
+    
+        } else {
+          let deStringAArray = JSON.parse(storage) 
+          deStringAArray.push(id)
+          let arrayAString = JSON.stringify(deStringAArray)
+          localStorage.setItem('favoritos', arrayAString)
+        }
+    
+        this.setState({
+          esFavorito: true
+        })
+      }
+      
+    
+      sacarFav(id){
+        let storage = localStorage.getItem('favoritos')
+        let storageAArray = JSON.parse(storage)
+        let filtro = storageAArray.filter((elm)=> elm !== id)
+        let filtroAString = JSON.stringify(filtro)
+        localStorage.setItem('favoritos', filtroAString)
+    
+        this.setState({
+          esFavorito: false
+        })
+    
+    
+      }
+
+
 render() {
         return (
             <article className='movie-box'>
@@ -52,6 +102,9 @@ render() {
                     <button>Ir al detalle de la pelicula </button>
                     </Link>
                    
+                </div>
+                <div>
+                  <button onClick={()=>this.anadirFav(this.props.datosPeliculas.id)}>añadir a Favs</button>
                 </div>
 
             </article>

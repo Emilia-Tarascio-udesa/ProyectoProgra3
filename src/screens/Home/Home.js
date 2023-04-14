@@ -14,8 +14,6 @@ function Home (){
             <Movie />           
             <Series />
             <Footer/>
-
-
         </React.Fragment>
     )
 }

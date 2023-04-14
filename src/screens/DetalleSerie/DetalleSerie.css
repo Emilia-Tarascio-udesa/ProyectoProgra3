@@ -1,0 +1,77 @@
+.detalle-pelicula-container {
+    display: flex;
+    margin: 20px;
+  }
+  
+
+  
+  .name {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    flex: 2;
+    margin-left: 20px;
+  }
+  
+  .movie {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    margin-bottom: 10px;
+    flex: 2;
+    margin-left: 20px;
+  }
+  
+  .rating {
+    font-size: 18px;
+    flex: 2;
+    margin-left: 20px;
+  }
+  
+  .rating-stars {
+    color: #fdd835;
+  }
+  
+
+  
+  .resumen {
+    font-size: 16px;
+    margin-bottom: 10px;
+    flex: 2;
+    margin-left: 20px;
+  }
+  
+  .estreno {
+    font-size: 16px;
+    flex: 2;
+    margin-left: 20px;
+  }
+  
+  .generos-title {
+    font-size: 16px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    flex: 2;
+    margin-left: 20px;
+  }
+  
+  .generos-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    flex: 2;
+    margin-left: 20px;
+  }
+  
+  .generos-list li {
+    font-size: 14px;
+    margin-right: 10px;
+    display: inline;
+    flex: 2;
+    margin-left: 20px;
+  }
+
+  /* EJEMPLO CSS */
+  .name {
+    color:#fdd835
+  }
