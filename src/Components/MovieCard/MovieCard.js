@@ -25,55 +25,57 @@ class MovieCard extends Component {
         }
     }
 
-//revisar 
     componentDidMount(){
-        let storage = localStorage.getItem('favoritos')
-        let storageAArray = JSON.parse(storage)
-    
-        if(storageAArray !== null){
-          let estaEnElArray = storageAArray.includes(this.props.info.id)
-          if(estaEnElArray){
-            this.setState({
-              esFavorito: true
-            })
-          }
-        }
+
+      let favoritos = [];
+      let recuperoStorage = localStorage.getItem('favoritos')
+
+      if(recuperoStorage !== null){
+          let favoritosGuardados = JSON.parse(recuperoStorage);
+          favoritos = favoritosGuardados
+
       }
- 
-    anadirFav(id){
-        let storage = localStorage.getItem('favoritos')
-    
-        if(storage === null){
-          let idEnArray = [id]
-          let arrayAString = JSON.stringify(idEnArray)
-          localStorage.setItem('favoritos', arrayAString)
-    
-        } else {
-          let deStringAArray = JSON.parse(storage) 
-          deStringAArray.push(id)
-          let arrayAString = JSON.stringify(deStringAArray)
-          localStorage.setItem('favoritos', arrayAString)
-        }
-    
+      if (favoritos.includes(this.props.datosPeliculas.id)){
+          this.setState ({
+              favs: 'Quitar de Favoritos'
+          })
+      }
+  }
+  AgregarFavs(id) {
+
+    let favoritos = [];
+    let recuperoStorage = localStorage.getItem('favoritos')
+
+    if (recuperoStorage !== null) {
+        let favoritosGuardados = JSON.parse(recuperoStorage);
+        favoritos = favoritosGuardados
+
+    }
+
+    if (favoritos.includes(id)) {
+
+        favoritos = favoritos.filter(elId => elId !== id);
         this.setState({
-          esFavorito: true
+            favs: 'Agregar a Favoritos'
         })
-      }
-      
-    
-      sacarFav(id){
-        let storage = localStorage.getItem('favoritos')
-        let storageAArray = JSON.parse(storage)
-        let filtro = storageAArray.filter((elm)=> elm !== id)
-        let filtroAString = JSON.stringify(filtro)
-        localStorage.setItem('favoritos', filtroAString)
-    
+    }
+
+    else {
+        favoritos.push(id);
         this.setState({
-          esFavorito: false
+            favs: 'Quitar de Favoritos'
         })
-    
-    
-      }
+    }
+
+
+    let favoritosAString = JSON.stringify(favoritos);
+
+    localStorage.setItem('favoritos', favoritosAString);
+
+    console.log(localStorage)
+}
+
+   
 
 
 render() {
@@ -104,7 +106,7 @@ render() {
                    
                 </div>
                 <div>
-                  <button onClick={()=>this.anadirFav(this.props.datosPeliculas.id)}>añadir a Favs</button>
+                  <button onClick={()=>this.AgregarFavs(this.props.datosPeliculas.id)}>{this.state.Favs}</button>
                 </div>
 
             </article>
