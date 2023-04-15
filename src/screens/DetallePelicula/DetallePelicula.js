@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import './DetallePelicula.css'
+import Footer from '../../Components/Footer/Footer'
+import Header from '../../Components/Header/Header'
 
 class DetallePelicula extends Component {
     constructor(props) {
@@ -24,6 +26,7 @@ class DetallePelicula extends Component {
     render() {
         return (
             <>
+            <Header/>
                 <h2 className='name'>{this.state.peliculaquellega.title}</h2> 
                 <img className='movie' src={`https://image.tmdb.org/t/p/w342/${this.state.peliculaquellega.poster_path}`} alt=""></img>
                 <p className='resumen'>Resumen: {this.state.peliculaquellega.overview}</p>
@@ -33,6 +36,7 @@ class DetallePelicula extends Component {
           <div>  <ul className="generos-list">
               {this.state.generos.map((Genero, idx) => <li key={Genero.name + idx}>{Genero.name}</li>)}
             </ul> </div>
+            <Footer/>
             </>
         )
     }

@@ -1,115 +1,55 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import {Link} from 'react-router-dom';
+import MovieCard from '../MovieCard/MovieCard';
 import './Movie.css'
 
+let urlpopularMovies = "https://api.themoviedb.org/3/movie/popular?api_key=cd01343e0629131590a07adb7eb11c98"
 
-class MovieCard extends Component {
-    constructor(props) {
-        super(props)
+
+class Movies extends Component {
+    constructor() {
+        super()
         this.state = {
-            descriptionClass: 'ocultar',
-            textoMostrarDescripcion: 'Ver descripcion',
-            Favs : 'Agregar a favoritos'
-        };
-    };
-
-    funcionalidadDescripcion() {
-        if (this.state.descriptionClass === 'ocultar') {
-            this.setState({
-                descriptionClass: 'mostrar', textoMostrarDescripcion: 'Ocultar descripcion'
-            })
-        } else {
-            this.setState({
-                descriptionClass: 'ocultar', textoMostrarDescripcion: 'Ver descripcion'
-            })
+            peliculasPopulares: [],
+            loading: true
         }
     }
 
-//revisar 
-    componentDidMount(){
-        let storage = localStorage.getItem('favoritos')
-        let storageAArray = JSON.parse(storage)
-    
-        if(storageAArray !== null){
-          let estaEnElArray = storageAArray.includes(this.props.info.id)
-          if(estaEnElArray){
-            this.setState({
-              esFavorito: true
+    componentDidMount() {
+        //Buscamos los datos de las peliculas mas populares
+        fetch(urlpopularMovies)
+            .then(res => res.json())
+            .then(data => {
+                let listaPeliculasPopulares = []
+                data.results.filter((unaPelicula, idx) => {
+                    if (idx < 4) {
+                        listaPeliculasPopulares.push(unaPelicula)
+                    }
+                    return null
+                })
+                this.setState(
+                    {
+                        peliculasPopulares: listaPeliculasPopulares,
+                        loading: false
+                    }
+                )
             })
-          }
-        }
-      }
- 
-    anadirFav(id){
-        let storage = localStorage.getItem('favoritos')
-    
-        if(storage === null){
-          let idEnArray = [id]
-          let arrayAString = JSON.stringify(idEnArray)
-          localStorage.setItem('favoritos', arrayAString)
-    
-        } else {
-          let deStringAArray = JSON.parse(storage) 
-          deStringAArray.push(id)
-          let arrayAString = JSON.stringify(deStringAArray)
-          localStorage.setItem('favoritos', arrayAString)
-        }
-    
-        this.setState({
-          esFavorito: true
-        })
-      }
-      
-    
-      sacarFav(id){
-        let storage = localStorage.getItem('favoritos')
-        let storageAArray = JSON.parse(storage)
-        let filtro = storageAArray.filter((elm)=> elm !== id)
-        let filtroAString = JSON.stringify(filtro)
-        localStorage.setItem('favoritos', filtroAString)
-    
-        this.setState({
-          esFavorito: false
-        })
-    
-    
-      }
+            .catch(err => console.log(err))
+    }
 
-
-render() {
+    render() { 
         return (
-            <article className='movie-box'>
-
-
-                <figure className='figuraImagen'>
-                        <img src={`https://image.tmdb.org/t/p/w342/${this.props.datosPeliculas.poster_path}`} alt="Cartel de película" />
-                </figure>
-
-
-                <h2 className='titulo'>{this.props.datosPeliculas.title}</h2>
-               
-               
-                <div className='descripcionCard'>
-                    <p onClick={() => this.funcionalidadDescripcion()} className='OverViewCard'> {this.state.textoMostrarDescripcion} </p>
-                    <p className={this.state.descriptionClass}>{this.props.datosPeliculas.overview}</p>
-                    <Link to={`/peliculas/detalle/id/${this.props.datosPeliculas.id}`}>
-                    </Link>
-                </div>
-
-
-                <div className='buttonsCard'>
-                    <Link to={`/peliculas/detalle/id/${this.props.datosPeliculas.id}`}>
-                        <button>Ir al detalle de la pelicula</button>
-                    </Link>
-                   
-                </div>
-                <div>
-                  <button onClick={()=>this.anadirFav(this.props.datosPeliculas.id)}>añadir a Favs</button>
-                </div>
-
-            </article>
+            <React.Fragment>
+                <h1 className='encabezado'>Películas Populares <Link to="/ver-todas-las-peliculas" >Ver todas</Link></h1>
+                <section className='cardContainer'>
+                    {
+                        this.state.loading ? <img src="/img/loading.gif" alt="" /> :
+                        this.state.peliculasPopulares.map((unaPelicula, idx) => <MovieCard key={unaPelicula.name + idx} datosPeliculas={unaPelicula} />)
+                    }
+                </section>
+            </React.Fragment>
         )
     }
 }
 
-export default MovieCard;
+export default Movies;

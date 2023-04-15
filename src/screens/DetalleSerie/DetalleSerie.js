@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import './DetalleSerie.css'
+import Header from "../../Components/Header/Header"
+import Footer from "../../Components/Footer/Footer"
 
 class DetalleSerie extends Component {
     constructor(props) {
@@ -25,6 +27,7 @@ class DetalleSerie extends Component {
     render() {
         return (
             <>
+            <Header/>
                 {
                     this.state.loading ? <img src="/img/loading.gif" alt="" /> :
                     <>
@@ -38,6 +41,7 @@ class DetalleSerie extends Component {
                         </ul> </div>
                     </>
                 }
+                <Footer/>
             </>
         )
     }

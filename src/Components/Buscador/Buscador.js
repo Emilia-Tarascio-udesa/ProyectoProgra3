@@ -26,7 +26,7 @@ class Buscador extends Component{
                     <input className="buscador-input" type='text' placeholder='Buscar' onChange={(e) => this.guardarCambios(e)} value={this.state.input} />
                     {
                         this.state.input ?
-                            <Link to={`/resultados/${this.state.input}`}>
+                            <Link to={`/resultados/title/${this.state.input}`}>
                                 <input className="buscador-submit"  type='submit' value='submit' /> 
                             </Link> 
                             :

@@ -20,11 +20,11 @@ function Header() {
                         </li>
                         
                         <li className="comp-nav">
-                            <Link to="/peliculas/pop">Peliculas</Link>
+                            <Link to="/">Peliculas</Link>
                         </li>
                         
                         <li className="comp-nav">
-                            <Link to="/series/pop">Series</Link>
+                            <Link to="/">Series</Link>
                         </li> 
                     
                     </ul>

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import './MovieCard.css'
 
+
 class MovieCard extends Component {
     constructor(props) {
         super(props)
@@ -24,93 +25,80 @@ class MovieCard extends Component {
         }
     }
 
-    componentDidMount(){
-
-      let favoritos = [];
-      let recuperoStorage = localStorage.getItem('favoritos')
-
-      if(recuperoStorage !== null){
-          let favoritosGuardados = JSON.parse(recuperoStorage);
-          favoritos = favoritosGuardados
-
-      }
-      if (favoritos.includes(this.props.datosPeliculas.id)){
-          this.setState ({
-              favs: 'Quitar de Favoritos'
-          })
-      }
-  }
-  AgregarFavs(id) {
-
-    let favoritos = [];
-    let recuperoStorage = localStorage.getItem('favoritos')
-
-    if (recuperoStorage !== null) {
-        let favoritosGuardados = JSON.parse(recuperoStorage);
-        favoritos = favoritosGuardados
-
-    }
-
-    if (favoritos.includes(id)) {
-
-        favoritos = favoritos.filter(elId => elId !== id);
+ 
+    anadirFav(id){
+        let storage = localStorage.getItem('favoritos')
+    
+        if(storage === null){
+          let idEnArray = [id]
+          let arrayAString = JSON.stringify(idEnArray)
+          localStorage.setItem('favoritos', arrayAString)
+    
+        } else {
+          let deStringAArray = JSON.parse(storage) 
+          deStringAArray.push(id)
+          let arrayAString = JSON.stringify(deStringAArray)
+          localStorage.setItem('favoritos', arrayAString)
+        }
+    
         this.setState({
-            favs: 'Agregar a Favoritos'
+          esFavorito: true
         })
-    }
-
-    else {
-        favoritos.push(id);
+      }
+      
+    
+      sacarFav(id){
+        let storage = localStorage.getItem('favoritos')
+        let storageAArray = JSON.parse(storage)
+        let filtro = storageAArray.filter((elm)=> elm !== id)
+        let filtroAString = JSON.stringify(filtro)
+        localStorage.setItem('favoritos', filtroAString)
+    
         this.setState({
-            favs: 'Quitar de Favoritos'
-        })
-    }
-
-
-    let favoritosAString = JSON.stringify(favoritos);
-
-    localStorage.setItem('favoritos', favoritosAString);
-
-    console.log(localStorage)
-}
-
-   
+          esFavorito: false
+        })    
+      }
 
 
 render() {
         return (
+
+        
+          
+
             <article className='movie-box'>
 
-
                 <figure className='figuraImagen'>
-                        <img src={`https://image.tmdb.org/t/p/w342/${this.props.datosPelicula.poster_path}`} alt="Cartel de película" />
+                        <img src={`https://image.tmdb.org/t/p/w342/${this.props.datosPeliculas.poster_path}`} alt="Cartel de película" />
                 </figure>
 
 
-                <h2 className='titulo'>{this.props.datosPelicula.title}</h2>
+                <h2 className='titulo'>{this.props.datosPeliculas.title}</h2>
                
                
                 <div className='descripcionCard'>
                     <p onClick={() => this.funcionalidadDescripcion()} className='OverViewCard'> {this.state.textoMostrarDescripcion} </p>
-                    <p className={this.state.descriptionClass}>{this.props.datosPelicula.overview}</p>
-                    <Link to={`/peliculas/detalle/id/${this.props.datosPelicula.id}`}>    </Link>
-                   
-                </div> 
+                    <p className={this.state.descriptionClass}>{this.props.datosPeliculas.overview}</p>
+                    <Link to={`/peliculas/detalle/id/${this.props.datosPeliculas.id}`}>
+                    </Link>
+                </div>
 
 
                 <div className='buttonsCard'>
-                    <Link to={`/peliculas/detalle/id/${this.props.datosPelicula.id}`}>
-                    <button>Ir al detalle de la pelicula </button>
+                    <Link to={`/peliculas/detalle/id/${this.props.datosPeliculas.id}`}>
+                        <button>Ir al detalle de la pelicula</button>
                     </Link>
                    
                 </div>
                 <div>
-                  <button onClick={()=>this.AgregarFavs(this.props.datosPeliculas.id)}>{this.state.Favs}</button>
+                  { <button onClick={()=>this.anadirFav(this.props.datosPeliculas.id)}>añadir a Favs</button> }
+                  
                 </div>
 
             </article>
-        )
-    }
+          
+          
+    )}
 }
 
 export default MovieCard;
