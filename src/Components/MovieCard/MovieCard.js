@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import './MovieCard.css'
 
-
 class MovieCard extends Component {
     constructor(props) {
         super(props)
@@ -94,7 +93,7 @@ render() {
                     <p className={this.state.descriptionClass}>{this.props.datosPelicula.overview}</p>
                     <Link to={`/peliculas/detalle/id/${this.props.datosPelicula.id}`}>    </Link>
                    
-                </div>
+                </div> 
 
 
                 <div className='buttonsCard'>
