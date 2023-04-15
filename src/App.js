@@ -1,5 +1,6 @@
 import React from "react";
-import {Route, Switch } from 'react-router-dom';
+import { Route, Link } from "react-router-dom";
+import {Switch } from 'react-router-dom';
 import Home from "./screens/Home/Home";
 import DetallePelicula from "./screens/DetallePelicula/DetallePelicula";
 import DetalleSerie from "./screens/DetalleSerie/DetalleSerie";
@@ -10,7 +11,7 @@ import VerTodasSeries from "./screens/VerTodas/VerTodasSeries";
 
 function App() {
   return (
-    <div className="App">
+    <main className="App">
       <Switch>
         <Route path="/" exact component={Home}/>
         <Route path="/ver-todas-las-peliculas" component={VerTodasPeliculas} />
@@ -19,7 +20,7 @@ function App() {
         <Route path="/series/detalle/id/:id" component={DetalleSerie}/>
         <Route path="/resultados/title/:title" component={SearchResults}/>
       </Switch>
-    </div>
+    </main>
   );
 }
 

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import {Link} from 'react-router-dom';
 import MovieCard from '../MovieCard/MovieCard';
+import { Link } from 'react-router-dom'; 
 import './Movie.css'
 
 let urlpopularMovies = "https://api.themoviedb.org/3/movie/popular?api_key=cd01343e0629131590a07adb7eb11c98"
