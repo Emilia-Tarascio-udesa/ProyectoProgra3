@@ -2,7 +2,7 @@ import React, { Component } from "react"
 import Buscador from "../../Components/Buscador/Buscador"
 import ResultadosCards from "../../Components/ResultadosCards/ResultadosCards"
 
-class SearchResults extends Component {}
+class SearchResults extends Component {
 constructor(props) {
     super(props)
       this.state = {
@@ -10,7 +10,7 @@ constructor(props) {
           peliculas: [],
           palabraEncontrada: this.props.match.params.title,
       };
-    }
+    }}
   
     componentDidMount(); {
   
@@ -27,7 +27,7 @@ constructor(props) {
         });
     }
   
-    render() {
+    render(); {
         return (
           <>
             <Buscador />
